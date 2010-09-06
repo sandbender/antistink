@@ -1,0 +1,31 @@
+This is the README file for antistink - the code-deodorizing superhero that makes sure you know when people are changing your code!
+
+NOTE: THIS SOFTWARE IS ALPHA! It's been tested at a basic level and should work (ie: the author is using it in a 'production' capacity as part of his dev workflow), but there may be (quite likely) bugs... also, as alpha software, this will likely be heavily re-factored at some point, among other things to streamline the usage and configuration, which at the moment isn't nearly as awesome as it should be...
+
+
+INSTALL / USAGE
+===============
+
+Just take a look at the top of as.rb for configuration stuff... to run, simply execute as.rb at the command line (it will need a couple different gems to be available, but nothing too esoteric... just plain old everyday stuff you probably already have).
+
+Note: as.rb is currently intended to run as a daemon - running it will fork a child process and it will then exit, with the 'daemon' child in the background, watching your back for you, like a good sidekick should.
+
+
+Q & A
+=====
+
+What the hell is 'antistink'?
+
+Antistink's main function is this: you configure it to watch a specific repository, and tell it who you are (ie: the username your own commits show up as). Once configured and running, it will check each and every commit to try and identify files (and line numbers) which were last committed by you, and have now been affected by another user's commit. When it finds such a potentially smelly change to your code, it will let you know (via email, at the moment). The message will contain, among other things, the commit and patch (diff) output showing the modified code and how/where to locate it.
+
+
+Why would I want to do that?
+
+To prevent code smell, of course! Code smell comes in all shapes and sizes... there are nifty things like lint checkers and style-checking repository hooks and whatnot, but at the end of the day, nothing beats the original author doing a quick check of any changes to see if something is amiss.
+
+Antistink keeps an eye on your code for you, and gives you all the info you'll want as soon as it sees a change made by someone else. Not only does this reduce a lot of manual browsing and diffing and stuff, but when used as part of your normal dev workflow/agile methodology/whatever, it has the nice effect of motivating people to check other's commits, essentially encouraging good code review practices, among other things - no one REALLY enjoys being forced to review other people's work all the time (even though we all need to do it!), BUT... everyone is usually pretty protective/concerned about their own code remaining clean/working/etc, and so when someone else makes a change, a developer is naturally motivated to check it out.
+
+
+Should I force my entire development team to use this paragon of a truly needed and amazingly effective development tool?
+
+Well... we didn't really say that. I mean... we don't want to encourage IT-fascism or anything, that would be horrible! But, having said that... do you really think your developers will NOT want to use this, once they get a little taste? I mean... come one... it *watches your code for you*... how wicked is that? ;)

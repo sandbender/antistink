@@ -1,0 +1,7 @@
+- given a username (author), repo url, and start version:
+  - will monitor repo for commits
+  - for each new commit:
+    - for each file in the commit:
+      - step through previous commits for given file, backwards, looking for author of all adjacent or overlapping changed lines
+      - if author is the author we're monitoring, then add this change to the set of change the author needs to be notified of
+    - if any changes exist for the author, notify the author
